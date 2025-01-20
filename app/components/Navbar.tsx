@@ -8,8 +8,8 @@ import {
 
 
 const baseNavigation = [
-    { name: "About", href: "about" },
-    { name: "Projects", href: "projects" },
+    { name: "About", href: "/about" },
+    { name: "Projects", href: "/projects" },
     { name: "Resume", href: "https://drive.google.com/file/d/1mtDfg42ipZmoid2htrKIir9CO6pmvIEJ/view?usp=drive_link" },
 ]
 
