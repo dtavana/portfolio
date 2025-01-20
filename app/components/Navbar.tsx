@@ -2,15 +2,14 @@ import { Link } from "@remix-run/react"
 import {
     NavigationMenu,
     NavigationMenuItem,
-    NavigationMenuLink,
     NavigationMenuList,
     navigationMenuTriggerStyle,
 } from "~/components/ui/navigation-menu";
 
 
 const baseNavigation = [
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
+    { name: "About", href: "about" },
+    { name: "Projects", href: "projects" },
     { name: "Resume", href: "https://drive.google.com/file/d/1mtDfg42ipZmoid2htrKIir9CO6pmvIEJ/view?usp=drive_link" },
 ]
 
@@ -22,11 +21,7 @@ export function Navbar() {
 
                 {baseNavigation.map((item) => (
                     <NavigationMenuItem key={item.name}>
-                        <Link to={item.href}>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                {item.name}
-                            </NavigationMenuLink>
-                        </Link>
+                        <Link className={navigationMenuTriggerStyle()} to={item.href}>{item.name}</Link>
                     </NavigationMenuItem>
                 ))}
             </NavigationMenuList>
