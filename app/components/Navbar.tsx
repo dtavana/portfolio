@@ -1,5 +1,4 @@
 import { Link } from "@remix-run/react"
-import type { RemixLinkProps } from "@remix-run/react/dist/components";
 import {
     NavigationMenu,
     NavigationMenuItem,
