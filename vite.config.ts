@@ -9,9 +9,11 @@ declare module "@remix-run/node" {
 }
 
 export default defineConfig({
+  base: "/portfolio/",
   plugins: [
     remix({
       ssr: false,
+      basename: "/portfolio/",
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
