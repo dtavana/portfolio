@@ -1,5 +1,7 @@
+import ProfilePicture from "~/components/ProfilePicture"
+
 export default function About() {
     return (
-        <p>About</p>
+        <ProfilePicture />
     )
 }
