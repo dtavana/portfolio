@@ -3,6 +3,7 @@ import {
     NavigationMenu,
     NavigationMenuItem,
     NavigationMenuList,
+    NavigationMenuLink,
     navigationMenuTriggerStyle,
 } from "~/components/ui/navigation-menu";
 
@@ -21,10 +22,14 @@ export function Navbar() {
 
                 {baseNavigation.map((item) => (
                     <NavigationMenuItem key={item.name}>
-                        <Link className={navigationMenuTriggerStyle()} to={item.href}>{item.name}</Link>
+                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                            {item.href.startsWith("http") ?
+                                <a target="_blank" rel="noreferrer" href={item.href}>{item.name}</a> :
+                                <Link to={item.href}>{item.name}</Link>}
+                        </NavigationMenuLink>
                     </NavigationMenuItem>
                 ))}
             </NavigationMenuList>
-        </NavigationMenu>
+        </NavigationMenu >
     );
 }
