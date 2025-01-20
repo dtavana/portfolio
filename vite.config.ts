@@ -11,11 +11,9 @@ declare module "@remix-run/node" {
 }
 
 export default defineConfig({
-  base: "/portfolio/",
   plugins: [
     remix({
       ssr: false,
-      basename: "/portfolio/",
       buildEnd(args) {
         if (!args.viteConfig.isProduction) return;
 
