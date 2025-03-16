@@ -24,6 +24,13 @@ module.exports = {
   // Base config
   extends: ["eslint:recommended"],
 
+  rules: {
+    "multiline-ternary": "error",
+    "max-len": ["error", { ignoreUrls: true }],
+  },
+
+  ignores: ["app/components/ui/*"],
+
   overrides: [
     // React
     {

@@ -18,14 +18,37 @@ export function Navbar() {
     return (
         <NavigationMenu className="mx-auto my-4 min-w-full">
             <NavigationMenuList>
-                <NavigationMenuItem className="font-bold mr-2"> dtavana</NavigationMenuItem>
+                <NavigationMenuItem key="dtavana">
+                    <NavigationMenuLink>
+                        <Link to="/">dtavana</Link>
+                    </NavigationMenuLink>
+                </NavigationMenuItem>
 
                 {baseNavigation.map((item) => (
                     <NavigationMenuItem key={item.name}>
-                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                            {item.href.startsWith("http") ?
-                                <a target="_blank" rel="noreferrer" href={item.href}>{item.name}</a> :
-                                <Link to={item.href}>{item.name}</Link>}
+                        <NavigationMenuLink 
+                            asChild 
+                            className={navigationMenuTriggerStyle()}
+                        >
+                            {item.href.startsWith("http") 
+                                ? (
+                                    <a
+                                        className="hover:underline text-2xl"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href={item.href}
+                                    >
+                                        {item.name}
+                                    </a>
+                                ) 
+                                : (
+                                    <Link
+                                        className="hover:underline text-2xl"
+                                        to={item.href}
+                                    >
+                                    {item.name}
+                                </Link>
+                            )}
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                 ))}
